@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Riversoljax - Nutrition Label</title>
+  <link rel="stylesheet" href="./food_label.css">
+</head>
+<body>
+  <header>
+  <h1 class="header-logo">
+  <img src="RIVERSOLJAX_logo.png" alt="Riversoljax logo" />
+  <br>
+  <span>Nutrition Label</span>
+</h1>
+</header>
+
+<div id="auto-section">
+
+  <div class="column">
+    <h2>Not Printed</h2>
+    <div id="not-printed-list"></div>
+  </div>
+
+  <div class="column">
+    <h2>Printed</h2>
+    <div id="printed-list"></div>
+  </div>
+
+</div>
+
+  <form id="nutritionForm">
+    <!-- Protein -->
+    <div class="section">
+      <h2>Protein</h2>
+      <label>
+        Select:
+        <select name="protein">
+          <option value="">-- Choose --</option>
+          <option value="protein.">Protein.</option>
+          <option value="chicken">Chicken</option>
+          <option value="beef">Beef</option>
+          <option value="salmon">Salmon</option>
+          <option value="tilapia">Tilapia</option>
+          <option value="shrimp">Shrimp</option>
+          <option value="pork">Pork</option>
+          <option value="turkey">Turkey</option>
+          <option value="liver">Liver</option>
+          <option value="bison">Bison</option>
+        </select>
+        Oz: <input type="number" name="protein_ounces" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <!-- Carbohydrates -->
+    <div class="section">
+      <h2>Carbohydrates</h2>
+      <label>
+        Select:
+        <select name="carbohydrate">
+          <option value="">-- Choose --</option>
+          <option value="carbs.">Carbs.</option>
+          <option value="sweet potato">Sweet Potato</option>
+          <option value="potato">Potato</option>
+          <option value="red potato">Red Potato</option>
+          <option value="white rice">White Rice</option>
+          <option value="pasta">Pasta</option>
+          <option value="quinoa">Quinoa</option>
+          <option value="cauliflower">Cauliflower</option>
+          <option value="basmati rice">Basmati Rice</option>
+          <option value="brown rice">Brown Rice</option>
+        </select>
+        Oz: <input type="number" name="carbohydrate_ounces" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <!-- Vegetables -->
+    <div class="section">
+      <h2>Vegetables</h2>
+      <label>
+        Select:
+        <select name="vegetable">
+          <option value="">-- Choose --</option>
+          <option value="veggies.">Veggies.</option>
+          <option value="broccoli">Broccoli</option>
+          <option value="zucchini">Zucchini</option>
+          <option value="asparagus">Asparagus</option>
+          <option value="brussels">Brussels</option>
+          <option value="spinach">Spinach</option>
+          <option value="cucumber">Cucumber</option>
+          <option value="green beans">Green Beans</option>
+          <option value="cabbage">Cabbage</option>
+          <option value="chard">Chard</option>
+          <option value="kale">Kale</option>
+          <option value="carrot">Carrot</option>
+          <option value="lettuce">Lettuce</option>
+          <option value="tomatoes">Tomatoes</option>
+          <option value="mushrooms">Mushrooms</option>
+        </select>
+        Oz: <input type="number" name="vegetable_ounces" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <!-- Extras -->
+    <div class="section">
+      <h2>Extras</h2>
+      <label>
+        <input type="checkbox" name="extra" value="egg" /> Egg
+        Count: <input type="number" name="extra_egg_count" min="0" step="0.01" value="0" />
+      </label>
+      <label>
+        <input type="checkbox" name="extra" value="avocado" /> Avocado
+        Count: <input type="number" name="extra_avocado_count" min="0" step="0.01" value="0" />
+      </label>
+      <label>
+        <input type="checkbox" name="extra" value="salad" /> Salad
+        Count: <input type="number" name="extra_salad_count" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <!-- Sauces -->
+    <div class="section">
+      <h2>Sauces</h2>
+      <label>
+        Select:
+        <select name="sauce">
+          <option value="">-- Choose --</option>
+          <option value="olive_oil">Olive Oil</option>
+          <option value="dressing">Dressing</option>
+        </select>
+        Count: <input type="number" name="sauce_count" min="0" step="0.01" value="0" />
+      </label>
+    </div>
+
+    <button type="submit" style="margin-right: 10px;">Add and Calculate</button>
+    <button type="button" onclick="window.print()">Print</button>
+  </form>
+
+  <div id="result"></div>
+
+  <div id="print-area"></div>
+<script type="module" src="../firebase_config.js"></script>
+<script type="module" src="./labels_auto.js"></script>
+<script src="./food_label.js"></script>
+</body>
+</html>
